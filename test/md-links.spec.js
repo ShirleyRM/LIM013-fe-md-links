@@ -4,7 +4,7 @@ const stats = 'C:\\Users\\Shirley\\Desktop\\Projects LIM013\\LIM013-fe-md-links\
 const directory = '\\Users\\Shirley';
 
 // Test para la función que convierte ruta relativa a absoluta
-describe('Debería validar si es una ruta', () => {
+describe('should validate if its a path', () => {
   const pathAbsolute = 'C:\\Users\\Shirley\\Desktop\\Projects LIM013\\LIM013-fe-md-links\\README.md';
   it('should be a function', () => {
     expect(typeof testPath.convertPath).toBe('function');
