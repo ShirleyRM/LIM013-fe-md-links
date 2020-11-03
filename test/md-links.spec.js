@@ -3,19 +3,6 @@ const testPath = require('../index.js');
 const stats = 'C:\\Users\\Shirley\\Desktop\\Projects LIM013\\LIM013-fe-md-links\\README.md';
 const directory = '\\Users\\Shirley';
 
-//Test para probar si path es válido
-// describe('Debería evaluar si el path existe', () => {
-//   it('should be a function', () => {
-//     expect(typeof testPath.isApath).toBe('function');
-//   });
-//   it('should return true if path is valid', () => {
-//     expect(testPath.isApath('.\\README.md')).toBe(true);
-//   });
-//   it('should return false if path is not valid', () => {
-//     expect(testPath.isApath('C:\\Users\\Shirley\\House')).toBe(false);
-//   });
-// });
-
 // Test para la función que convierte ruta relativa a absoluta
 describe('Debería validar si es una ruta', () => {
   const pathAbsolute = 'C:\\Users\\Shirley\\Desktop\\Projects LIM013\\LIM013-fe-md-links\\README.md';
@@ -54,5 +41,18 @@ describe('should validate if the path is a directory', () =>{
   });
   it('should return false if its a file', () => {
     expect(testPath.isDirectory(stats)).toEqual(false);
+  });
+});
+
+//Test para validar si es MD
+describe('should validate if the path is MarkDown', () =>{
+  it('should validate if its a function', () => {
+    expect(typeof testPath.isMd).toBe('function');
+  });
+  it('should return true if it is MarkDown',() => {
+    expect(testPath.isMd(stats)).toEqual(true);
+  });
+  it('should return false if is not MarkDown', () => {
+    expect(testPath.isMd(directory)).toEqual(false);
   });
 });

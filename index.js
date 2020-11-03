@@ -68,4 +68,4 @@ mdArr.forEach(function (element, index) {
 // const stats = fs.statSync('C:\\Users\\Shirley\\Desktop\\Projects LIM013\\LIM013-fe-md-links\\README.md');
 // console.log(' is directory? ' + stats.isDirectory ('C:\\Users\\Shirley\\Desktop\\Projects LIM013\\LIM013-fe-md-links\\README.md'));
 
-module.exports = { isApath, convertPath, isFile, isDirectory };
+module.exports = { isApath, convertPath, isFile, isDirectory, isMd };
