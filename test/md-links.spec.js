@@ -39,7 +39,7 @@ describe('should validate if the path is a directory', () =>{
   it('should return true if its a directory',() => {
     expect(testPath.isDirectory(directory)).toEqual(true);
   });
-  it('should return false if its a file', () => {
+  it.only('should return false if its a file', () => {
     expect(testPath.isDirectory(stats)).toEqual(false);
   });
 });
