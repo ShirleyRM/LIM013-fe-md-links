@@ -28,7 +28,7 @@ const isDirectory = (ruta) => fs.statSync(ruta).isDirectory();
 
 // Función para validar si es MarkDown
 const isMd = (ruta) => path.extname(ruta) === ".md";
-// console.log(isMd("README.md"));
+console.log(isMd("README.md"));
 
 module.exports = {
   existsPath,
