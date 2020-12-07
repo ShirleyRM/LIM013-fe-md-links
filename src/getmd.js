@@ -1,52 +1,51 @@
 const path = require("path");
 const fs = require("fs");
-const indexPath = require("./index.js");
+const index = require("./index.js");
 const marked = require("marked");
 
 //Función para recorrer directory y encontrar MD
-const getMd = (ruta) => {
+const getMd = (route) => {
   let arrMd = [];
 
-  if (indexPath.isFile(ruta)) {
-    if (indexPath.isMd(ruta)) {
-      arrMd.push(ruta);
+  if (index.isFile(route)) {
+    if (index.isMd(route)) {
+      arrMd.push(route);
     }
   } else {
-    const readDir = fs.readdirSync(ruta);
+    const readDir = fs.readdirSync(route);
     readDir.forEach((file) => {
-      const pathMd = path.join(ruta, file);
+      const pathMd = path.join(route, file);
       arrMd = arrMd.concat(getMd(pathMd));
     });
   }
   return arrMd;
 };
-// console.log(getMd('C:\\Users\\Shirley\\Desktop\\Projects LIM013\\LIM013-fe-md-links\\Prueba'));
+// console.log(getMd("C:\\Users\\Laboratoria\\Desktop\\Project\\LIM013-fe-md-links\\Prueba"));
 
-//Recorrer MD, extraer links e imprimirlos con renderer de Marked
-const renderer = {
-  link(href, title, text) {
-    const object = {
-      href,
-      text,
-      path: "",
-    };
-    console.log(object);
-  },
-};
-marked.use({ renderer });
 
-const getAllMd  = (ruta) => {
-  const mdFiles = getMd(ruta);
+const getLinks = (route) => {
+  const arrayMd = getMd(route);
   const arrMdLinks = [];
-  mdFiles.forEach((allMd) => {
-    const readMd = fs.readFileSync(allMd, 'utf-8');
-    const toHtml = marked(readMd);
-  });
+  arrayMd.forEach((file) => {
+    const mdText = (pathMd) => fs.readFileSync(pathMd, "utf-8");
+    const renderer = new marked.Renderer()
+    renderer.link = 
+    (href, title, text) => {
+        const object = {
+          href,
+          text,
+          file,
+        };
+        arrMdLinks.push(object);
+      };
+      marked(mdText(file), {renderer});
+    });
+  
   return arrMdLinks;
-};
-console.log(getAllMd('C:\\Users\\Shirley\\Desktop\\Projects LIM013\\LIM013-fe-md-links\\README.md'));
+  };
+// console.log(getLinks('C:\\Users\\Laboratoria\\Desktop\\Project\\LIM013-fe-md-links\\README.md'));
 
-module.exports = { 
+module.exports = {
   getMd,
-  getAllMd, 
+  getLinks,
 };

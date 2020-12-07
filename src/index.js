@@ -2,33 +2,31 @@ const path = require("path");
 const fs = require("fs");
 
 //Función para validar existencia de la ruta
-const existsPath = (ruta) => fs.existsSync(ruta);
-
+const existsPath = (route) => fs.existsSync(route);
+// console.log(existsPath("C:\\Users\\Laboratoria\\Desktop\\Project\\LIM013-fe-md-links\\Prue"));
 // Función para validar si la ruta es absoluta:
-const validatePath = (ruta) => path.isAbsolute(ruta);
+const validatePath = (route) => path.isAbsolute(route);
 
 // Función que convierte ruta relativa a absoluta
-const convertPath = (ruta) => {
+const convertPath = (route) => {
   let absPath;
 
-  if (!path.isAbsolute(ruta)) {
-    absPath = path.resolve(ruta);
-  } else {
-    absPath === false;
-  }
+  if (!path.isAbsolute(route)) {
+    absPath = path.resolve(route);
+  } 
   return absPath;
 };
-// console.log(convertPath("package.json"));
 
 // Función para validar si es File
-const isFile = (ruta) => fs.statSync(ruta).isFile();
+const isFile = (route) => fs.statSync(route).isFile();
 
 // Función para validar si es Directory
-const isDirectory = (ruta) => fs.statSync(ruta).isDirectory();
+const isDirectory = (route) => fs.statSync(route).isDirectory();
 
-// Función para validar si es MarkDown
-const isMd = (ruta) => path.extname(ruta) === ".md";
-console.log(isMd("README.md"));
+// Función para validar si es MarkDown  
+const isMd = (route) => path.extname(route) === ".md";
+// console.log(isMd("README.md"));
+// console.log(isMd('C:\\Users\\Laboratoria\\Desktop\\Project\\LIM013-fe-md-links\\Prueba'));
 
 module.exports = {
   existsPath,
@@ -38,3 +36,4 @@ module.exports = {
   isDirectory,
   isMd,
 };
+ 
