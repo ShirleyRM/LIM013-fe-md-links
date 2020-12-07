@@ -43,6 +43,6 @@ En este proyecto crearás una herramienta de línea de comando (CLI) así como t
 propia librería (o biblioteca - library) en JavaScript.
 
 ## 3. Diagrama de flujo
-(https://github.com/ShirleyRM/LIM013-fe-md-links/blob/master/src/img/flowchart.jpeg?raw=true)
+(https://raw.githubusercontent.com/ShirleyRM/LIM013-fe-md-links/c01baec935829d5fab5804f5b195aa7a50930f5f/src/img/MDLINKS.svg)
 ## 4. Implementación
 
