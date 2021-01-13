@@ -18,11 +18,11 @@ const mdLinks = (route, {validate}) =>
       arrAllMd = validation(route);
       arrAllMd.then((validateLinks) => resolve(validateLinks));
     }else{
-      // console.log(arrAllMd);
+      console.log(arrAllMd);
       resolve(arrAllMd);
     }  
 });   
     
-mdLinks('C:\\Users\\Laboratoria\\Desktop\\Project\\LIM013-fe-md-links\\Prueba', {validate: false}).then((validatelinks) => {console.log(validatelinks)}); 
+mdLinks('C:\\Users\\Laboratoria\\Desktop\\FE-Projects\\LIM013-fe-md-links\\Prueba', {validate: false}).then((validatelinks) => {console.log(validatelinks)}); 
 
 module.exports = { mdLinks };

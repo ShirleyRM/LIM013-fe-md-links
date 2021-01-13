@@ -20,7 +20,7 @@ const getMd = (route) => {
   }
   return arrMd;
 };
-// console.log(getMd("C:\\Users\\Laboratoria\\Desktop\\Project\\LIM013-fe-md-links\\Prueba"));
+// console.log(getMd("C:\\Users\\Laboratoria\\Desktop\\FE-Projects\\LIM013-fe-md-links\\Prueba"));
 
 
 const getLinks = (route) => {
@@ -43,7 +43,7 @@ const getLinks = (route) => {
   
   return arrMdLinks;
   };
-// console.log(getLinks('C:\\Users\\Laboratoria\\Desktop\\Project\\LIM013-fe-md-links\\README.md'));
+console.log(getLinks('C:\\Users\\Laboratoria\\Desktop\\FE-Projects\\LIM013-fe-md-links\\README.md'));
 
 module.exports = {
   getMd,
