@@ -20,7 +20,7 @@ const getMd = (route) => {
   }
   return arrMd;
 };
-// console.log(getMd("C:\\Users\\Laboratoria\\Desktop\\FE-Projects\\LIM013-fe-md-links\\Prueba"));
+console.log(getMd("C:\\Users\\Laboratoria\\Desktop\\FE-Projects\\LIM013-fe-md-links\\Prueba"));
 
 
 const getLinks = (route) => {
